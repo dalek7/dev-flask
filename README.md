@@ -8,7 +8,7 @@ Docker --> server --> client
 
 * Docker run
 ```bash
-docker run -it --rm --gpus all -v -p 7981:81 DOCKER_IMAGE bash
+docker run -u $(id -u) -it --rm --gpus all -v -p 7981:81 DOCKER_IMAGE bash
 ```
 
 *  Server-->Local SSH-port forwarding
