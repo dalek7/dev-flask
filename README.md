@@ -7,8 +7,9 @@ Docker --> server --> client
 ```
 
 * Docker run
+    * 아래 -v 옵션에서의 폴더는 각자 환경에 
 ```bash
-docker run -u $(id -u) -it --rm --gpus all -v -p 7981:81 DOCKER_IMAGE bash
+docker run -u $(id -u) -it --rm --gpus all -v ~/repos/:/tf/repos/ -p 7981:81 DOCKER_IMAGE bash
 ```
 
 *  Server-->Local SSH-port forwarding
