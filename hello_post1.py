@@ -31,6 +31,19 @@ def send_post():
     return res.text
 
 
+@app.route('/send_post2', methods=['GET'])
+def send_post2():
+    # https://www.w3schools.com/python/ref_requests_post.asp
+    myobj = {'somekey': 'somevalue'}
+
+    url = "http://127.0.0.1:81/handle_post"
+    res = requests.post(url, data = json.dumps(myobj))
+
+    #res = requests.post(url, data=json.dumps(params))
+    return res.text
+
+
+
 if __name__ == '__main__':
     app.debug = True
     #app.run()
