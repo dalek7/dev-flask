@@ -6,7 +6,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def root():
-    return 'Welcome to flask !'
+    str = 'Welcome to flask ! <br/> <a href=\'/send_post2\' />post test </a>'
+    return str#'Welcome to flask !'
 
 @app.route('/handle_post', methods=['POST'])
 def handle_post():
