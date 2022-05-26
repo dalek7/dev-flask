@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def root():
-    str = 'Welcome to flask ! <br/> <a href=\'/send_post2\' />post test </a>'
+    str = 'Welcome to flask ! <br/> <a href=\'/send_post\' />post test </a>'
     return str#'Welcome to flask !'
 
 @app.route('/handle_post', methods=['POST'])
@@ -25,17 +25,6 @@ def handle_post():
 
 @app.route('/send_post', methods=['GET'])
 def send_post():
-    params = {
-        "param1": "test",
-        "param2": 123,
-        "param3": "한글"
-    }
-    res = requests.post("http://127.0.0.1:81/handle_post", data=json.dumps(params))
-    return res.text
-
-
-@app.route('/send_post2', methods=['GET'])
-def send_post2():
     global model, t1
     
     
